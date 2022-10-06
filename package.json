@@ -1,14 +1,24 @@
 {
-  "name": "tugas_api_mysql",
+  "name": "tugas_api_mysql_v2",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bramtriprastowo/express-api-example.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bramtriprastowo/express-api-example/issues"
+  },
+  "homepage": "https://github.com/bramtriprastowo/express-api-example#readme",
   "dependencies": {
     "express": "^4.18.1",
     "morgan": "^1.10.0",
