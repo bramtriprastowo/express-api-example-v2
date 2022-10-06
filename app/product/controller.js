@@ -1,7 +1,7 @@
-const connection = require("../../config/mysql");
+const {pool} = require("../../config/mysql");
 
 const index = (req, res) => {
-  connection.query(
+  pool.query(
     {
       sql: "SELECT * FROM products",
     },
@@ -10,7 +10,7 @@ const index = (req, res) => {
 };
 
 const view = (req, res) => {
-  connection.query(
+  pool.query(
     {
       sql: "SELECT * FROM products WHERE id = ?",
       values: [req.params.id]
@@ -21,7 +21,7 @@ const view = (req, res) => {
 
 const store = (req, res) => {
   const { name, price, stock, status, image_url } = req.body;
-  connection.query(
+  pool.query(
     {
       sql: "INSERT INTO products (name, price, stock, status, image_url) VALUES (?, ?, ?, ?, ?)",
       values: [name, price, stock, status, image_url]
@@ -33,7 +33,7 @@ const store = (req, res) => {
 const update = (req, res) => {
     const { name, price, stock, status, image_url } = req.body;
     const id = req.params.id;
-    connection.query(
+    pool.query(
       {
         sql: "UPDATE products SET name = ?, price = ?, stock = ?, status = ?, image_url = ? WHERE id = ?",
         values: [name, price, stock, status, image_url, id]
@@ -44,7 +44,7 @@ const update = (req, res) => {
 
   const remove = (req, res) => {
     const id = req.params.id;
-    connection.query(
+    pool.query(
       {
         sql: "DELETE FROM products WHERE id = ?",
         values: [id]
