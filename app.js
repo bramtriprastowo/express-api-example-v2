@@ -20,4 +20,5 @@ app.use((req, res, next) => {
     })
 })
 
-app.listen(3000, () => console.log('Server: http://localhost:3000'));
+const PORT = 3000;
+app.listen(process.env.PORT || PORT, () => console.log('Server: http://localhost:3000'));
